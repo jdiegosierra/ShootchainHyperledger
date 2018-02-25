@@ -1,0 +1,19 @@
+namespace org.acme.model
+
+
+participant Fighter identified by fighterId {
+  o String fighterId
+  o String name
+}
+
+asset Features identified by featuresId {
+  o String featuresId
+  o Integer damage
+  o Integer life
+  --> Fighter fighter
+}
+
+transaction Atack {
+  --> Features from
+  --> Features to	
+}
