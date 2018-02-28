@@ -22,7 +22,20 @@ function ChampSelect(cs) {
     if(cs.player.champs > 0){
     	cs.player.champs --;
     	console.log('Numero de campeones restantes: ' + cs.player.champs);
-        console.log('Cmpeon elegido: ' + cs.champ);
+        console.log('Campeon elegido: ' + cs.champ);
+        
+		/////////////////////////////////////////////////////////
+        return getAssetRegistry('org.acme.model.Prueba')
+          .then(function (champAssetRegistry) {
+          var factory = getFactory();
+          var campeon = factory.newResource('org.acme.model', 'Prueba', 'probandoID');
+          return champAssetRegistry.add(campeon);
+        })
+          .catch(function (error) {
+          // Add optional error handling here.
+        });
+      ////////////////////////////////////////////////////////////////////////
+
     }
     else {
     	console.log('El jugador no puede crear más campeones');

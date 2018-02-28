@@ -11,9 +11,12 @@ participant Player identified by username {
   o String lastname optional
   o Integer age optional
   o String email
-  o Integer champs default=2 range=[2,2]
+  o Integer champs default=2 range=[0,2]
 }
-
+asset Prueba identified by pruebaId {
+  o String pruebaId
+}
+  
 asset Champ identified by champId {
   o String champId
   o Integer vida
@@ -38,4 +41,3 @@ transaction ChampSelect {
 
 transaction Reset {
 }
-
