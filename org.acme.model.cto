@@ -1,29 +1,8 @@
-//La idea es tener sólo un activo en el que podamos elegir que tipo de personaje queremos tener
-//Si sabes como implementarlo haz un commit en el proyecto.
-//Falta adaptar el archivo logic.js y añadir eventos.
-
 namespace org.acme.model
 
-abstract concept ArcherFeatures {
-  o Integer life default = 50
-  o Integer af default = 11
-  o Integer am default = 6
-  o Integer va default = 20
-  o Double pf default = 0.30
-  o Double pd default = 0.05
-  o Integer df default = 5
-  o Integer dm default = 5
-}
-
-abstract concept AssassinFeatures {
-  o Integer life default = 50
-  o Integer af default = 11
-  o Integer am default = 6
-  o Integer va default = 5
-  o Double pf default = 0.10
-  o Double pd default = 0.15
-  o Integer df default = 5
-  o Integer dm default = 5
+enum ChampType {
+  o ASSASSIN
+  o ARCHER
 }
 
 participant Player identified by username {
@@ -32,40 +11,31 @@ participant Player identified by username {
   o String lastname optional
   o Integer age optional
   o String email
+  o Integer champs default=2 range=[2,2]
 }
 
-asset ArcherChamp identified by champId {
+asset Champ identified by champId {
   o String champId
-  o String name
-  o ArcherFeatures archer
+  o Integer vida
+  o Integer ataquefisico 
+  o Integer ataquemagico 
+  o Integer velocidadataque 
+  o Double probfallo
+  o Double probdefensa 
+  o Integer defensafisica
+  o Integer defensamagica
+}
+  
+transaction Atack {
+  --> Champ from
+  --> Champ to	
+}
+
+transaction ChampSelect {
+  o ChampType champ
   --> Player player
 }
 
-asset AssassinChamp identified by champId {
-  o String champId
-  o String name
-  o AssassinFeatures assassin
-  --> Player own
+transaction Reset {
 }
-
-transaction Archer2Archer {
-  --> ArcherChamp from
-  --> ArcherChamp to	
-}
-
-transaction Assassin2Assassin {
-  --> AssassinChamp from
-  --> AssassinChamp to	
-}
-
-transaction Archer2Assassin {
-  --> ArcherChamp from
-  --> AssassinChamp to	
-}
-  
-transaction Assassin2Archer {
-  --> AssassinChamp from
-  --> ArcherChamp to	
-}
-
 

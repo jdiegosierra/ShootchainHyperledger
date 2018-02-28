@@ -14,26 +14,17 @@
 
 /**
  * Atack processor function.
- * @param {org.acme.model.Atack} atack - the atack to be processed
+ * @param {org.acme.model.ChampSelect} cs - Creación de un campeón.
  * @transaction
  */
-function Atack(atack) {
-  var damage = atack.from.damage;
-  var life = atack.to.life;
-  var result = life - damage;
-  console.log('Life : ' + life);
-  console.log('Damage: ' + damage);
-  console.log('Result: ' + result);
-  atack.to.life = result; // <---
-   // Get the asset registry for the asset.
-  return getAssetRegistry('org.acme.model.Features')
-    .then(function (assetRegistry) {
-
-    // Update the asset in the asset registry.
-    return assetRegistry.update(atack.to);
-
-  })
-    .then(function () {
-
-  });
+function ChampSelect(cs) {
+    // Comprobamos si el jugador puede crear un campeón
+    if(cs.player.champs > 0){
+    	cs.player.champs --;
+    	console.log('Numero de campeones restantes: ' + cs.player.champs);
+        console.log('Cmpeon elegido: ' + cs.champ);
+    }
+    else {
+    	console.log('El jugador no puede crear más campeones');
+    }
 }
