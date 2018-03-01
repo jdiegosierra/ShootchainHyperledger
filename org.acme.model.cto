@@ -13,11 +13,9 @@ participant Player identified by username {
   o String email
   o Integer champs default=2 range=[0,2]
 }
-asset Prueba identified by pruebaId {
-  o String pruebaId
-}
   
 asset Champ identified by champId {
+  --> Player owner
   o String champId
   o Integer vida
   o Integer ataquefisico 
@@ -36,6 +34,7 @@ transaction Atack {
 
 transaction ChampSelect {
   o ChampType champ
+  o String champId
   --> Player player
 }
 
