@@ -7,7 +7,7 @@ Este es un juego basado en la tecnología Blockchain. Para ello utilizaré las h
 - Para atacar a otro campeón habrá que reaizar una transacción de tipo Atack.
 - Cuando un campeón llega a 0 de vida, muere y no puede realizar ni recibir ataques.
 
-Para probar el juego, accede a https://composer-playground.mybluemix.net/ crear un nuevo proyecto vacío e importa el archivo shootchain.bna
+Para probar el juego, accede a https://composer-playground.mybluemix.net/ crear un nuevo proyecto vacío e importa el archivo shootchain-game.bna
 
 Para cualquier cosa puedes contactar conmigo en diegosierr28@hotmail.com
 
