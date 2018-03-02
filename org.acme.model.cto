@@ -3,6 +3,8 @@ namespace org.acme.model
 enum ChampType {
   o ASSASSIN
   o ARCHER
+  o WIZARD
+  o TANK 
 }
 
 participant Player identified by username {

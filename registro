@@ -1,3 +1,5 @@
-V 0.2
+V 0.3
 
-Falta actualizar el valor del campo champs del jugador que selecciona el campeon.
+Las funciones principales ya están implementadas. Falta añadir eventos e implementar la función Reset.
+
+Falta configurar el archivo permissions.acl.

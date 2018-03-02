@@ -1,11 +1,14 @@
 Este es un juego basado en la tecnología Blockchain. Para ello utilizaré las herramientas que nos ofrece Hyperledger.
 
-El juego consiste en que los jugadores (administradores) crearán luchadores (participantes) que tendrán distintas caracterísitcas (activos) y se lanzarán ataques (transacciones) entre ellos.
+- Los jugadores de la red son los participantes.
+- Cada jugador puede crear un máximo de 2 campeones.
+- Los campeones se crean haciendo una transacción de tipo ChampionSelect.
+- El jugador puede elegir entre distintos tipos de campeones (ARCHER, TANK, WIZARD, ASSASSIN).
+- Para atacar a otro campeón habrá que reaizar una transacción de tipo Atack.
+- Cuando un campeón llega a 0 de vida, muere y no puede realizar ni recibir ataques.
 
-Puedes acceder a https://composer-playground.mybluemix.net/ crear un nuevo proyecto e importar el archivo shootchain.bna
+Para probar el juego, accede a https://composer-playground.mybluemix.net/ crear un nuevo proyecto vacío e importa el archivo shootchain.bna
 
+Para cualquier cosa puedes contactar conmigo en diegosierr28@hotmail.com
 
-1 Los participantes serán los jugadores.
-2 Para seleccionar un campeón, cree una transacción de tipo ChampSelect (Como máximo podrá crear 2 campeones). En el tipo de campeón podrá elegir entre: Assassin o Archer.
-3 Para atacar a otro campeón, cree una transacción de tipo Atack.
-4 Para resetear el juego, cree una transacción de tipo Reset.
+Gracias!
